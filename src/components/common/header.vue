@@ -1,9 +1,7 @@
 <template lang="html">
-<div>
     <div class="header">
-        这是头部
+      <div class="siteName"> 网站名称 </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -13,10 +11,16 @@ export default {
 
 <style lang="css" scoped>
 .header{
-    hieght:10rem;
-    line-hieght:10rem;
-    font-size: 14px;
-    text-align: center;
-    background-color: green;
+    height: 3rem;
+    width:100%;
+    line-height: 3rem;
+    font-size: 1rem;
+    background-color: #f3f3f3 ;
+    padding:0 2rem;
+    box-shadow: 2px 2px 3px 1px #e6e6e6;
+    color: rgb(115, 115, 115);
+    position:fixed;
+    top:0 ;
+    left:0;
 }
 </style>

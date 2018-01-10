@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Highlight from './Highlight.js'
+Vue.use(Highlight)
 
 Vue.config.productionTip = false
 

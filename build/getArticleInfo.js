@@ -14,11 +14,29 @@ function findSync(startPath) {
         let stats=fs.statSync(fPath);
         // if(stats.isDirectory()) {result.unshift({type:"directory",name:val,path:pa})};
         if(stats.isFile()){
-            result.push({type:"file", name:val});
+          // 解析出 文章的参数 信息
+          var data=fs.readFileSync(fPath,"utf-8");
+          result.push(Object.assign({},{type:"file", name:val},getHeader(data)));
         }
     });
     return result;
 }
+
+function getHeader(data){
+  var start = data.indexOf("---");
+  var end = data.indexOf("---",start+3);
+  var mdHead = data.substring(start+3,end);
+  var headArr = mdHead.split(/\n/).filter(function(val){
+      return val!==""&&val!=="\r";
+  });
+  var headJSON = {};
+  headArr.map(function(val){
+    var arr = val.split(":");
+    headJSON[arr[0]] = arr[1].replace(/\r/g,"").replace(/\[/g,"").replace(/\]/g,"");
+  })
+  return headJSON;
+}
+
 //
 // module.exports = {
 //   'stats': stats

@@ -2,9 +2,7 @@
 <div>
     <div class="footer">
         这是页脚哦！
-
     </div>
-
 </div>
 
 </template>
@@ -16,12 +14,17 @@ export default {
 
 <style lang="css" scoped>
 .footer{
-    font-size:14px;
-    height:10rem;
-    line-height: 10rem;
+    font-size:1rem;
     width:100%;
-    background-color: rgba(67, 175, 228, 0.52);
-
+    height: 3rem;
+    line-height: 3rem;
+    background-color: #f3f3f3;
+    box-shadow: 0px -1px 1px 1px #e6e6e6;
+    color: rgb(115, 115, 115);
+    padding:0 2rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;;
 }
 
 </style>
