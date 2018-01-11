@@ -1,15 +1,25 @@
 <template lang="html">
     <div class="header">
-      <div class="siteName"> 网站名称 </div>
+      <div class="siteName"> {{siteInfo.title}}  <span class="desc">{{siteInfo.description}}</span> </div>
     </div>
 </template>
 
 <script>
+import {site} from '../../../blog.config.js'
 export default {
+  data(){
+    return {
+      siteInfo: site
+    }
+  },
 }
 </script>
 
 <style lang="css" scoped>
+.siteName{
+  font-size: 1.5rem;
+  color:#333;
+}
 .header{
     height: 3rem;
     width:100%;
@@ -22,5 +32,10 @@ export default {
     position:fixed;
     top:0 ;
     left:0;
+}
+.desc{
+  font-size: 0.8rem;
+  color:rgb(115, 115, 115);
+ margin-left: 1rem;
 }
 </style>

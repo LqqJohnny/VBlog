@@ -1,19 +1,27 @@
 <template lang="html">
 <div>
     <div class="footer">
-        这是页脚哦！
+      {{site.author}} |  <a :href="footer.url">Github</a>  | {{site.email}}
     </div>
 </div>
 
 </template>
 
 <script>
+import {site,footer} from '../../../blog.config.js'
 export default {
+  data(){
+    return {
+      footer: footer,
+      site: site
+    }
+  },
 }
 </script>
 
 <style lang="css" scoped>
 .footer{
+    text-align: center;
     font-size:1rem;
     width:100%;
     height: 3rem;

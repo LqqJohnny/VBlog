@@ -1,6 +1,12 @@
 <template lang="html">
   <div class="articleInfo">
   <div class="title">{{$route.params.id}}</div>
+  <hr>
+  <div class="info">
+    <span v-if="date">日期 :{{date}} </span>
+    <span v-if="tags">标签 :{{tags}} </span>
+    <span v-if="categories">分类 ： {{categories}} </span>
+   </div>
   <article class="article" v-html="articleContent" v-highlight>
 
   </article>
@@ -8,15 +14,29 @@
 </template>
 
 <script>
+var articles = require('../../../articles.json');
 import "../../../static/sakura.css"
 export default {
   data(){
     return {
-      articleContent: ""
+      articleContent: "",
+      date:"",
+      tags:"",
+      categories:""
     }
   },
   mounted(){
     var id = this.$route.params.id;
+    var _this = this;
+    articles.map(function(val){
+      if(val.title.indexOf(id)>=0){
+        _this.date = val.date ;
+        _this.tags = val.tags ;
+        _this.categories = val.categories ;
+      }
+    })
+
+
     var md = require('../../articles/'+id+'.md');
     var start = md.indexOf('<!-- deleteAbove -->');
     if(start>0){
@@ -28,6 +48,14 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.info{
+  height:5rem;
+}
+.info span{
+  margin-right: 6rem;
+
+  color: #989898;
+}
 .articleInfo{
   padding: 1rem 2rem;
 }
