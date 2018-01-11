@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="header">
-      <div class="siteName"> {{siteInfo.title}}  <span class="desc">{{siteInfo.description}}</span> </div>
+      <div class="siteName"> <router-link to="/">{{siteInfo.title}}</router-link> <span class="desc">{{siteInfo.description}}</span> </div>
     </div>
 </template>
 
@@ -16,9 +16,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.siteName{
+.siteName a{
   font-size: 1.5rem;
   color:#333;
+  text-decoration: none;
+}
+.siteName a:hover{
+  color:rgb(24, 122, 201);
 }
 .header{
     height: 3rem;
