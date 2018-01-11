@@ -2,7 +2,7 @@
 <div>
     <div class="title">文章列表</div>
     <div class="articlesList">
-      <div class="article_item" v-for="a in list" ><router-link target="_blank" :to="genUrl(a.name)">{{genTitle(a.name)}}</router-link></div>
+      <div class="article_item" v-for="a in list" ><router-link :to="genUrl(a.name)">{{genTitle(a.name)}}</router-link></div>
     </div>
 </div>
 </template>

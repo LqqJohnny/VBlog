@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/pages/home'
-import article from '@/components/pages/article'
-
+const home = () => import('@/components/pages/home')
+const article = () => import('@/components/pages/article')
 Vue.use(Router)
 
 export default new Router({
