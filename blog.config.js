@@ -6,9 +6,8 @@ module.exports = {
     author: 'lqq',
     email:'1277601297@qq.com'
   },
+  highlightTheme: "mono-blue",  //  代码段 的颜色主题
   footer:{
     url:"https://github.com/LqqJohnny/SimpleBlogByVue",
-
   }
-
 }

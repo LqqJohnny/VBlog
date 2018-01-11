@@ -48,4 +48,39 @@ npm run build --report
 
 `npm run build` 可进行打包，成静态文件 ，再上传到github 并设置gitPage 即可看到博客。
 
+## 编辑
+
 编辑文章，请在 `src/articles` 里进行
+
+在文章的开头，请务必 加上文件信息头，如下：
+```
+---
+title: 文章的标题
+date: 时间（例如：2017-11-07 10:57:49  可以在编辑器上安装插入时间戳的插件）
+tags: [tag1,tag2]
+---
+```
+编写完成之后，在打包过程中，webpack 会在上述的文章信息头后加上一个标识
+`<!-- deleteAbove -->`
+用于在渲染页面时 不显示信息头。
+所以，在看到这一段 注释 的时候不要删除，并不会影响文章效果。
+
+## 配置网站信息
+
+在根目录下的 `blog.config.js` 中可以设置网站的信息，如：
+```js
+site:{
+  title: 199,
+  subtitle: '面试造火箭，上岗拧螺丝',
+  description: ' --- 它在我的机器上可以很好运行！',
+  author: 'lqq',
+  email:'*****@qq.com'
+},
+footer:{
+  url:"https://github.com/LqqJohnny/SimpleBlogByVue",
+}
+```
+暂时只加了这些信息 ，也可根据需要自行添加信息，并在components里面编辑模板，添加到想展现信息的地方。
+
+## 代码高亮
+ 代码高亮使用的是 highlight.js 使用的颜色主题是 `gruvbox-light` 如果想修改请在 `blog.config.js` 中修改 highlightTheme ，可选的值可在highlight 官网查看,注意主题不再使用驼峰法。
