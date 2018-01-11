@@ -39,7 +39,7 @@ npm run build --report
 │   │   ├───common  通用组件
 │   │   └───pages   页面（首页，文章页...）
 │   └───router      路由管理
-└───static          静态资源（如 css，js , img）
+└───static          静态资源（如 css，js , img）博客中可直接应用该目录图片
 └───articles.json   webpack 自动生成的关于文章的信息文件
 └───blog.config.js  网站的配置文件，可设置网站名字 作者等信息
 ```
@@ -84,3 +84,8 @@ footer:{
 
 ## 代码高亮
  代码高亮使用的是 highlight.js 使用的颜色主题是 `gruvbox-light` 如果想修改请在 `blog.config.js` 中修改 highlightTheme ，可选的值可在highlight 官网查看,注意主题不再使用驼峰法。
+
+## 博客插入图片
+
+在博客中经常需要加入图片 ，把图片放入 static 静态文件夹中 在博客中直接以相对路径引入，如：
+`![图片](../../static/cat.jpg)` 。 具体的路径视情况而定。

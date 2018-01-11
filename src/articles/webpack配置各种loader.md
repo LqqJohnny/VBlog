@@ -8,10 +8,9 @@ tags: [webpack]
 
 一些常见的 css ，js ，image 的loader配置。
 
-小二 ， 上码 ！
 <!-- more -->
 
-
+![tupian](../../static/11.png)
 
 ### webpack.config.js
 ```js

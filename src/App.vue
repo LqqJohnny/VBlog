@@ -36,4 +36,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+img{
+  box-shadow: 0px 0px 10px 3px #000000;
+  display: block;
+  margin: 3rem auto;
+}
 </style>
