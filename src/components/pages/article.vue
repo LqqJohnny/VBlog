@@ -29,7 +29,8 @@ export default {
     var id = this.$route.params.id;
     var _this = this;
     articles.map(function(val){
-      if(val.title.indexOf(id)>=0){
+      console.log(val);
+      if(val.title.trim() === id){
         _this.date = val.date ;
         _this.tags = val.tags ;
         _this.categories = val.categories ;

@@ -39,6 +39,7 @@ npm run build --report
 │   │   ├───common  通用组件
 │   │   └───pages   页面（首页，文章页...）
 │   └───router      路由管理
+|   └───recycleBin  文章回收站
 └───static          静态资源（如 css，js , img）博客中可直接应用该目录图片
 └───articles.json   webpack 自动生成的关于文章的信息文件
 └───blog.config.js  网站的配置文件，可设置网站名字 作者等信息
