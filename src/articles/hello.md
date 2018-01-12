@@ -1,8 +1,8 @@
 ---
-title: webpack配置各种loader
-date: 2017-11-07
-tags: [webpack]
-categories: 你好
+title: hello
+date: 2018/1/12 11:21:52
+tags: [hello,webpack]
+categories: hello
 ---
  <!-- deleteAbove -->
 

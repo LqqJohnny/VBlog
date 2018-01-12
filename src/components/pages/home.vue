@@ -2,7 +2,7 @@
 <div>
     <div class="title">文章列表</div>
     <div class="articlesList">
-      <div class="article_item" v-for="a in list" ><router-link :to="genUrl(a.name)">{{genTitle(a.name)}}</router-link></div>
+      <div class="article_item" v-for="a in list" ><router-link :to="genUrl(a.name)">{{genTitle(a.name)}}</router-link> <span class="date">{{getDate(a.timestamp)}}</span></div>
     </div>
 </div>
 </template>
@@ -22,6 +22,10 @@ export default {
     },
     genTitle(name){
       return name.replace(/\.md/g,'');
+    },
+    getDate(time){
+      var date = new Date(time);
+      return date.getFullYear()+" / "+(date.getMonth()+1)+" / "+date.getDate();
     }
   }
 }
@@ -46,6 +50,10 @@ export default {
 .article_item a:hover{
   border-bottom: 2px solid rgb(18, 149, 244);
   color: #1693ff;
+}
+.article_item .date{
+  float: right;
+  color: rgb(115, 115, 115);
 }
 
 </style>
