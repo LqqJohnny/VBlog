@@ -54,9 +54,9 @@ function getHeader(data,path,filename,tags,cates){
     var arr = val.split(":");
     var key = arr[0];
     if(key==="date"){
-      var val = arr.slice(1).join(":").replace(/\r/g,"");
+      var val = arr.slice(1).join(":").replace(/\r/g,"").trim();
     }else{
-      var val = arr[1].replace(/\r/g,"").replace(/\[/g,"").replace(/\]/g,"");
+      var val = arr[1].replace(/\r/g,"").replace(/\[/g,"").replace(/\]/g,"").trim();
 
     }
     if(key ==="date"){ headJSON["timestamp"] = new Date(val).getTime();}// 将时间转为 long 有助于排序
