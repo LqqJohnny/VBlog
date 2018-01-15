@@ -8,7 +8,7 @@
 </template>
 
 <script>
-var a = require('../../../articles.json');
+var a = require('../../../../articles.json');
 
 export default {
   data(){

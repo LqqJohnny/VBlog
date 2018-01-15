@@ -1,7 +1,7 @@
 var fs = require('fs');
 let  join = require('path').join;
 
-var startPath = "src/articles";
+var startPath = "articles";
 var stats = findSync(startPath);
 // 对文章按时间排序
 var articles = stats.result.sort(function(a,b){

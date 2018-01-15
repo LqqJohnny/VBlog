@@ -1,7 +1,7 @@
 // highlight.js
 import Vue from 'vue'
 import Hljs from 'highlight.js'
-import {highlightTheme} from '../blog.config.js'
+import {highlightTheme} from '../../blog.config.js'
 var a = highlightTheme;
 import(`highlight.js/styles/${a}.css`)  // 动态引入 nice
 let Highlight = {}
