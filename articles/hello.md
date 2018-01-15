@@ -11,7 +11,7 @@ categories: hello
 
 <!-- more -->
 
-![tupian](../../static/11.png)
+![tupian](../res/11.png)
 
 ### webpack.config.js
 ```js

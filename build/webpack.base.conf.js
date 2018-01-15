@@ -2,14 +2,17 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var {blogTheme}  = require("../blog.config.js")
 require('./getArticleInfo.js')
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
+console.log("选用主题："+ blogTheme);
 module.exports = {
   entry: {
-    app: './src/main.js'
+    // app: './src/main.js'
+    app: './theme/'+blogTheme+'/main.js'
   },
   output: {
     path: config.build.assetsRoot,

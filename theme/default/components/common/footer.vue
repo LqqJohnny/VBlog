@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import {site,footer} from '../../../blog.config.js'
+import {site,footer} from '../../../../blog.config.js'
 export default {
   data(){
     return {

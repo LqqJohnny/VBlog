@@ -14,8 +14,8 @@
 </template>
 
 <script>
-var articles = require('../../../articles.json');
-import "../../../static/sakura.css"
+var articles = require('../../../../articles.json');
+import "../../../../static/sakura.css"
 export default {
   data(){
     return {
@@ -29,7 +29,8 @@ export default {
     var id = this.$route.params.id;
     var _this = this;
     articles.map(function(val){
-      if(val.title.indexOf(id)>=0){
+      console.log(val);
+      if(val.title.trim() === id){
         _this.date = val.date ;
         _this.tags = val.tags ;
         _this.categories = val.categories ;
@@ -37,7 +38,7 @@ export default {
     })
 
 
-    var md = require('../../articles/'+id+'.md');
+    var md = require('../../../../articles/'+id+'.md');
     var start = md.indexOf('<!-- deleteAbove -->');
     if(start>0){
       md = md.substring(start+"<!-- deleteAbove -->".length);
