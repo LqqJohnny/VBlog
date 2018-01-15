@@ -38,7 +38,7 @@ export default {
     })
 
 
-    var md = require('../../articles/'+id+'.md');
+    var md = require('../../../articles/'+id+'.md');
     var start = md.indexOf('<!-- deleteAbove -->');
     if(start>0){
       md = md.substring(start+"<!-- deleteAbove -->".length);
