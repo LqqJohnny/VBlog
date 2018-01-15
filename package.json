@@ -1,12 +1,9 @@
 {
-  "name": "SimpleBlogByVue",
+  "name": "VBlog",
   "version": "1.0.0",
   "description": "a simple blog project based on Vue.",
   "author": "lqqppl <1277601297@qq.com>",
   "private": true,
-  "bin": {
-    "vblog": "./bin/vblog.js"
-  },
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",

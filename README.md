@@ -1,4 +1,4 @@
-# SimpleBlogByVue
+# VBlog
 
 > a simple blog project based on Vue.
 
