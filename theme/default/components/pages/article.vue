@@ -14,8 +14,8 @@
 </template>
 
 <script>
-var articles = require('../../../articles.json');
-import "../../../static/sakura.css"
+var articles = require('../../../../articles.json');
+import "../../../../static/sakura.css"
 export default {
   data(){
     return {
@@ -38,7 +38,7 @@ export default {
     })
 
 
-    var md = require('../../../articles/'+id+'.md');
+    var md = require('../../../../articles/'+id+'.md');
     var start = md.indexOf('<!-- deleteAbove -->');
     if(start>0){
       md = md.substring(start+"<!-- deleteAbove -->".length);

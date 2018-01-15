@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {site} from '../../../blog.config.js'
+import {site} from '../../../../blog.config.js'
 export default {
   data(){
     return {

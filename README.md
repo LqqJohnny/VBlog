@@ -35,12 +35,12 @@ npm run build --report
 │       ├───css
 │       └───js
 |   └───index.html   可直接访问 index.html 看到  
-├───src
-│   ├───assets
-│   ├───components  博客主题模板
-│   │   ├───common  通用组件
-│   │   └───pages   页面（首页，文章页...）
-│   └───router      路由管理
+├───theme    主题模板文件  （默认主题、安装的新主题）
+│   └───default   默认主题
+│       ├───components  博客主题模板
+│       │   ├───common  通用组件
+│       │   └───pages   页面（首页，文章页...）
+│       └───router      路由管理
 └───static          静态资源
 └───articles.json   webpack 自动生成的关于文章的信息文件
 └───blog.config.js  网站的配置文件，可设置网站名字 作者等信息
@@ -91,3 +91,6 @@ footer:{
 
 在博客中经常需要加入图片 ，把图片放入 static 静态文件夹中 在博客中直接以相对路径引入，如：
 `![图片](../../static/cat.jpg)` 。 具体的路径视情况而定。
+
+## 博客主题
+> 待完善
