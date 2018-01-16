@@ -10,6 +10,7 @@ const notFound = () => import('../components/pages/notFound.vue')
 
 Vue.use(Router)
 
+
 export default new Router({
   routes: [
     {

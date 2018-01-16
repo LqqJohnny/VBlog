@@ -26,7 +26,11 @@ export default {
     }
   },
   mounted(){
+
     var id = this.$route.params.id;
+
+    document.title= id;  //  设置标题
+
     var _this = this;
     articles.map(function(val){
       console.log(val);
