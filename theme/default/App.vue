@@ -43,4 +43,18 @@ img{
   display: block;
   margin: 3rem auto;
 }
+
+.clearfix{zoom:1}
+.clearfix:after{
+     content:".";
+     display:block;
+     height:0;
+     clear:both;
+     visibility:hidden;
+
+}
+li{
+  list-style: none;
+}
+
 </style>
