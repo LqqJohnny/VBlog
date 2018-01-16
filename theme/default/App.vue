@@ -2,7 +2,9 @@
   <div id="app">
     <Header></Header>
     <!-- <Side></Side> -->
-    <div id="articlecontainer"><router-view></router-view></div>
+    <div id="articlecontainer">
+      <router-view></router-view>
+    </div>
     <Footer></Footer>
   </div>
 </template>
@@ -41,6 +43,7 @@ img{
   display: block;
   margin: 3rem auto;
 }
+
 .clearfix{zoom:1}
 .clearfix:after{
      content:".";
@@ -53,4 +56,5 @@ img{
 li{
   list-style: none;
 }
+
 </style>

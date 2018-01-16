@@ -1,11 +1,14 @@
 <template lang="html">
     <div class="header">
       <div class="siteName"> <router-link to="/">{{siteInfo.title}}</router-link> <span class="desc">{{siteInfo.description}}</span> </div>
+
        <ul class="header_menu clearfix"><li v-for="item in menuInfo"><router-link :to="item.href">{{item.name}}</router-link></li></ul>
+
     </div>
 </template>
 
 <script>
+
 import {site,menu} from '../../../../blog.config.js'
 export default {
   data(){
@@ -44,6 +47,7 @@ export default {
   color:rgb(115, 115, 115);
  margin-left: 1rem;
 }
+
 .siteName{
   display: inline-block;
 }
