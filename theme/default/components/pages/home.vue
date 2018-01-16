@@ -9,12 +9,15 @@
 
 <script>
 var a = require('../../../../articles.json');
-
+const {site} = require("../../../../blog.config.js");
 export default {
   data(){
     return {
       list:a
     }
+  },
+  mounted(){
+      document.title= site.title ;
   },
   methods:{
     genUrl(name){

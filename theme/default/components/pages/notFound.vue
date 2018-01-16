@@ -16,6 +16,9 @@
 </template>
 <script>
 export default {
+  mounted(){
+      document.title= "找不到页面" ;
+  }
 }
 </script>
 
