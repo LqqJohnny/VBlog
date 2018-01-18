@@ -2,6 +2,6 @@
 module.exports = {
     musicOn: true,
     musicSrc: require('./src/Something Just Like This.mp3'),
-    autoplay: true,
+    autoplay: false,
     musicLoop: true
 }

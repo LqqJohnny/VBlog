@@ -1,12 +1,15 @@
 <template lang="html">
-  <div id="musicbox" :class="{showing : showing}">
+  <div id="musicbox"
+        :class="{showing : showing==1,hiding : showing==0 }"
+        :style="{left:showing==1?'0':'-170px'}"
+      >
     <audio :src="src" :autoplay="autoplay" id="music" :loop="loop">
         您的浏览器版本过低，无法播放，请及时升级
     </audio>
     <div class="musicname">
       <marquee behavior="alternate" direction="left" scrollamount=1> &nbsp;&nbsp;&nbsp;  {{musicName}} &nbsp;&nbsp;&nbsp;  </marquee>
     </div>
-    <div class="hide-show" @click="show_hide"> {{showing?"<":">"}} </div>
+    <div class="hide-show" @click="show_hide"> {{showing==1?"<":">"}} </div>
     <div class="controls">
         <div class="play-pause" :class="{playing:playing , pausing:!playing}" id="playPause" @click="change"></div>
     </div>
@@ -22,7 +25,7 @@ export default {
   data(){
     return {
         playing:this.autoplay,
-        showing:true
+        showing:-1 ,  // -1表示初始隐藏  0 初始隐藏但是会有隐藏动画  1表示初始展示 也带动画
     }
   },
   computed:{
@@ -42,7 +45,11 @@ export default {
 
     },
     show_hide(){
-      this.showing = !this.showing;
+      if(this.showing<1){
+        this.showing=1;
+      }else{
+        this.showing=0;
+      }
     }
   }
 }
@@ -63,12 +70,12 @@ export default {
 #musicbox{
   width:220px;
   height:40px;
-  position: absolute;
+  position: fixed;
   bottom: 4rem;
-  left:-170px;
+  left:0;
   padding-left:10px;
   box-shadow: 0px 0px 5px 1px #b8b8b8;
-  animation: slideOut 0.5s;
+
 }
 .play-pause{
   width:30px;
@@ -95,16 +102,17 @@ export default {
   line-height: 40px;
 }
 #musicbox.showing{
-  left:0;
   animation: slideIn 0.5s;
 }
-
+#musicbox.hiding{
+  animation: slideOut 0.5s;
+}
 @keyframes slideIn {
   from {left: -170px; }
   to {left : 0 ;}
 }
 @keyframes slideOut {
   from {left: 0; }
-  to {left : -170px ;}
+  to {left :-170px ;}
 }
 </style>
