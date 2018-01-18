@@ -2,6 +2,7 @@
   <div id="app">
     <Header></Header>
     <!-- <Side></Side> -->
+    <Music v-if="musicOn" :src="musicSrc" :autoplay="autoplay" :loop="loop"></Music>
     <div id="articlecontainer">
       <router-view></router-view>
     </div>
@@ -12,14 +13,23 @@
 <script>
 import Footer from "./components/common/footer.vue"
 import Header from "./components/common/header.vue"
+import Music from "./components/common/music.vue"
 // import Side from "./components/common/side.vue"
 import 'normalize.css';
-
+import {musicOn , musicSrc ,autoplay , musicLoop} from './theme.config.js';
 
 export default {
   name: 'app',
+  data(){
+    return {
+      musicOn: musicOn,
+      autoplay: autoplay,
+      musicSrc:musicSrc,
+      loop: musicLoop
+    }
+  },
   components:{
-    Header,Footer
+    Header,Footer,Music
   }
 }
 </script>

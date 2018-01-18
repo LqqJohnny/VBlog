@@ -92,6 +92,8 @@ export default {
   border-radius: 1rem;
   border:1px solid rgb(198, 198, 198);
   font-size: .8rem;
+  background-color: #fff;
+  box-sizing:content-box;
 }
 .searchFrame:after{
   content: "";
