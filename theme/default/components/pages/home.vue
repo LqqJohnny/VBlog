@@ -7,6 +7,7 @@
 
     <div class="searchFrame">
       <input type="text" class="searchBar" placeholder="文章名称" v-model="searchword" @keyup.enter="search">
+      <div class="icon" @click="search"></div>
     </div>
 </div>
 </template>
@@ -95,8 +96,7 @@ export default {
   background-color: #fff;
   box-sizing:content-box;
 }
-.searchFrame:after{
-  content: "";
+.searchFrame .icon{
   position: absolute;
   display: block;
   width:1rem;
