@@ -15,7 +15,7 @@
 
 <script>
 var articles = require('../../../../articles.json');
-import { passwordOn } from '../../theme.config.js';
+import { passwordOn } from '../../../../blog.config.js';
 import "../../../../static/sakura.css"
 export default {
   data(){

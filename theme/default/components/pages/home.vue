@@ -2,7 +2,11 @@
 <div class="home">
     <div class="title">文章列表</div>
     <div class="articlesList">
-      <div class="article_item" v-for="a in list" ><router-link :to="genUrl(a.name)">{{genTitle(a.name)}}</router-link> <span class="date">{{getDate(a.timestamp)}}</span></div>
+      <div class="article_item" v-for="a in list" >
+        <router-link :to="genUrl(a.name)">{{genTitle(a.name)}}</router-link>
+        <span v-if="passwordOn && typeof(a.password)!='undefined' && a.password!=''" class="sercet"></span>
+        <span class="date">{{getDate(a.timestamp)}}</span>
+      </div>
     </div>
 
     <div class="searchFrame">
@@ -14,12 +18,13 @@
 
 <script>
 var arts = require('../../../../articles.json');
-const {site} = require("../../../../blog.config.js");
+const {site , passwordOn} = require("../../../../blog.config.js");
 export default {
   data(){
     return {
       list:arts,
-      searchword:""
+      searchword:"",
+      passwordOn:passwordOn,
     }
   },
   mounted(){
@@ -122,5 +127,10 @@ input:-ms-input-placeholder{
 
 input::-webkit-input-placeholder{
     color: #b9b5b5;opacity:1;
+}
+.sercet{
+  background: url(../../src/lock.png) no-repeat;
+  padding:0 1rem;
+  margin-left:1rem;
 }
 </style>

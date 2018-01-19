@@ -18,5 +18,6 @@ module.exports = {
   footer:{
     url:"https://github.com/LqqJohnny/VBlog",
   },
-  blogTheme:"default"
+  blogTheme:"default",
+  passwordOn: true
 }
