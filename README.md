@@ -2,26 +2,44 @@
 
 > a simple blog project based on Vue.
 
-## Build Setup
+## 安装运行
+
+以下提供两种方式：
+
+- 方式 1： git clone
 
 ``` bash
-# install dependencies
-npm install
+git clone https://github.com/LqqJohnny/VBlog.git
 
-# serve with hot reload at localhost:8080
+# then install dependencies
+cd VBlog  && npm install
+
+# serve with hot reload at localhost:8000
+npm run dev
+```
+
+- 方式 2 (推荐)： vblog-cli
+
+```bash
+# install vblog-cli :  https://github.com/LqqJohnny/vblog-cli
+npm install -g vblog-cli
+
+# init your blogProject
+vblog init myBlog
+
+# then install dependencies
+cd VBlog  && npm install
+
+# serve with hot reload at localhost:8000
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
+
+> 推荐使用方式2 ，vblog还有添加博客、删除博客和添加主题等指令，十分方便日后对于博客的修改。
 
 ## 目录
 
-使用的vue-cli 生成的项目 ，故项目结构和 vue webpack项目结构类似
-
+本项目借鉴了 `vue` 的 `webpack` ,稍加修改 ， 将博客打包成静态文件。
 
 
 ```

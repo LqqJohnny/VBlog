@@ -7,7 +7,7 @@
     <span v-if="tags">标签 :{{tags}} </span>
     <span v-if="categories">分类 ： {{categories}} </span>
    </div>
-  <article class="article" v-html="articleContent" v-highlight>
+  <article class="article" v-html="articleContent" v-highlight v-if="!passErr">
 
   </article>
   </div>
@@ -15,14 +15,37 @@
 
 <script>
 var articles = require('../../../../articles.json');
+import { passwordOn } from '../../../../blog.config.js';
 import "../../../../static/sakura.css"
 export default {
   data(){
     return {
+      passwordOn: passwordOn,
       articleContent: "",
       date:"",
       tags:"",
-      categories:""
+      categories:"",
+      password:"",
+      passErr:false,
+    }
+  },
+  beforeMount(){
+    var id = this.$route.params.id;
+    var _this = this;
+    articles.map(function(val){
+      if(val.title.trim() === id){
+        _this.date = val.date ;
+        _this.tags = val.tags ;
+        _this.categories = val.categories ;
+        _this.password=val.password;
+      }
+    })
+    if(passwordOn && typeof(_this.password)!="undefined" && this.password!=""){
+      if (prompt('请输入文章密码') !== this.password ){
+          this.passErr=true;
+          alert('密码错误,您无法查看此文章');
+          history.back();
+      }
     }
   },
   mounted(){
@@ -30,17 +53,6 @@ export default {
     var id = this.$route.params.id;
 
     document.title= id;  //  设置标题
-
-    var _this = this;
-    articles.map(function(val){
-      console.log(val);
-      if(val.title.trim() === id){
-        _this.date = val.date ;
-        _this.tags = val.tags ;
-        _this.categories = val.categories ;
-      }
-    })
-
 
     var md = require('../../../../articles/'+id+'.md');
     var start = md.indexOf('<!-- deleteAbove -->');

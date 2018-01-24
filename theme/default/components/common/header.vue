@@ -2,7 +2,9 @@
     <div class="header">
       <div class="siteName"> <router-link to="/">{{siteInfo.title}}</router-link> <span class="desc">{{siteInfo.description}}</span> </div>
 
-       <ul class="header_menu clearfix"><li v-for="item in menuInfo"><router-link :to="item.href">{{item.name}}</router-link></li></ul>
+       <ul class="header_menu ">
+         <li v-for="item in menuInfo"><router-link :to="item.href">{{item.name}}</router-link></li>
+       </ul>
 
     </div>
 </template>
@@ -54,17 +56,23 @@ export default {
 .header_menu{
     margin: 0;
     float: right;
-    margin-right: 3rem;
+    margin-right: 6rem;
+    height:100%;
 }
 .header_menu li{
+  height:100%;
   list-style: none;
-  font-size: 0.8rem;
-  float: left;
   margin-right: 2rem;
   cursor: pointer;
+  display: inline-block;
+  margin-bottom:0;
+  padding: 0.3rem;
+  box-sizing: border-box;
 }
 .header_menu li a{
-  line-height: inherit;
+  display: block;
+  height: 100%;
+  line-height: 2.4rem;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
   transition-duration: 0.2s;
@@ -73,8 +81,9 @@ export default {
   text-decoration: none;
   color: #666;
 }
-.header_menu li a:hover{
+.header_menu li:hover{
   color: #333;
-  border-bottom: 1px solid #000;
+  background-color: rgb(235, 235, 235);
+  border-bottom: 2px solid #428bca;
 }
 </style>

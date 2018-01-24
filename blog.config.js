@@ -8,7 +8,7 @@ module.exports = {
   },
   menu:{
     home:{name:'首页',href:'/'},
-    // tags:{name:'标签',href:'/tags'},
+    tags:{name:'标签',href:'/tags'},
     categories:{name:'类别',href:'/categories'},
   },
   menu_icons:{
@@ -18,5 +18,6 @@ module.exports = {
   footer:{
     url:"https://github.com/LqqJohnny/VBlog",
   },
-  blogTheme:"default"
+  blogTheme:"default",
+  passwordOn: true
 }
