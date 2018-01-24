@@ -7,13 +7,17 @@
     <span v-if="tags">标签 :{{tags}} </span>
     <span v-if="categories">分类 ： {{categories}} </span>
    </div>
-  <article class="article" v-html="articleContent" v-highlight v-if="!passErr">
+  <vue-lazy-component>
+    <article class="article" v-html="articleContent" v-highlight v-if="!passErr">
+    </article>
 
-  </article>
+    <artContentSkt slot="skeleton"></artContentSkt>
+  </vue-lazy-component>
   </div>
 </template>
 
 <script>
+import artContentSkt from "../common/artContentSkt.vue"
 var articles = require('../../../../articles.json');
 import { passwordOn } from '../../../../blog.config.js';
 import "../../../../static/sakura.css"
@@ -28,6 +32,9 @@ export default {
       password:"",
       passErr:false,
     }
+  },
+  components:{
+    artContentSkt
   },
   beforeMount(){
     var id = this.$route.params.id;
