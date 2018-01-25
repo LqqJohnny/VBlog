@@ -32,6 +32,7 @@ export default {
   color:rgb(24, 122, 201);
 }
 .header{
+  z-index: 10;
     height: 3rem;
     width:100%;
     line-height: 3rem;

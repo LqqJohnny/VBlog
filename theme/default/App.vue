@@ -43,15 +43,21 @@ export default {
   padding: 0;
   overflow: hidden;
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-img{
+.articleInfo img{
   box-shadow: 0px 0px 10px 3px #000000;
   display: block;
   margin: 3rem auto;
+  max-width:40%;
+}
+
+.articleInfo img:visited{
+  width:100%;
 }
 
 .clearfix{zoom:1}

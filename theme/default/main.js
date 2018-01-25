@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Highlight from './Highlight.js'
+import VueLazyComponent from '@xunlei/vue-lazy-component'
+Vue.use(VueLazyComponent);
 Vue.use(Highlight)
 
 Vue.config.productionTip = false

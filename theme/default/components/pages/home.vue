@@ -1,14 +1,21 @@
 <template lang="html">
 <div class="home">
     <div class="title">文章列表</div>
-    <div class="articlesList">
-      <div class="article_item" v-for="a in list" >
-        <router-link :to="genUrl(a.name)">{{genTitle(a.name)}}</router-link>
-        <span v-if="passwordOn && typeof(a.password)!='undefined' && a.password!=''" class="sercet"></span>
-        <span class="date">{{getDate(a.timestamp)}}</span>
+    <vue-lazy-component
+      class="lazyComponent"
+      :class="{'done' : slideStart}"
+      :timeout='500'
+      @after-enter="afterInit">
+      <div class="articlesList">
+        <div class="article_item" v-for="a in list" >
+          <router-link :to="genUrl(a.name)">{{genTitle(a.name)}}</router-link>
+          <span v-if="passwordOn && typeof(a.password)!='undefined' && a.password!=''" class="sercet"></span>
+          <span class="date">{{getDate(a.timestamp)}}</span>
+        </div>
       </div>
-    </div>
 
+      <artListSkt slot="skeleton"/>
+    </vue-lazy-component>
     <div class="searchFrame">
       <input type="text" class="searchBar" placeholder="文章名称" v-model="searchword" @keyup.enter="search">
       <div class="icon" @click="search"></div>
@@ -19,18 +26,27 @@
 <script>
 var arts = require('../../../../articles.json');
 const {site , passwordOn} = require("../../../../blog.config.js");
+import artListSkt from '../common/artListSkt.vue'
 export default {
   data(){
     return {
       list:arts,
       searchword:"",
       passwordOn:passwordOn,
+      slideStart: false
     }
+  },
+  components:{
+      artListSkt
   },
   mounted(){
       document.title= site.title ;
   },
   methods:{
+    afterInit(){
+      this.slideStart = true;
+      console.log(this.slideStart);
+    },
     genUrl(name){
       return "/article/"+name.replace(/\.md/g,'');
     },
@@ -133,4 +149,18 @@ input::-webkit-input-placeholder{
   padding:0 1rem;
   margin-left:1rem;
 }
+
+.lazyComponent{
+  max-height: 11rem;
+  min-height: 11rem;
+  overflow: hidden;
+  transition: max-height ease 5s;
+}
+
+.lazyComponent.done{
+  max-height:10000vh;
+  min-height: 0;
+  transition: max-height ease-in 5s;
+}
+
 </style>
