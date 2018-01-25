@@ -53,6 +53,7 @@ export default {
   box-shadow: 0px 0px 10px 3px #000000;
   display: block;
   margin: 3rem auto;
+  max-width:40%;
 }
 
 .articleInfo img:visited{

@@ -23,8 +23,9 @@ export default {
   animation: bigPicShow 0.5s;
 }
 .bigPic img{
-  width: 60%;
-  max-height: 80%;
+  min-width: 50%;
+  max-width: 90%;
+  max-height: 90%;
 }
 @keyframes bigPicShow {
   from {

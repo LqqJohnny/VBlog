@@ -11,7 +11,7 @@ categories: 你好
 
 <!-- more -->
 
-![tupian](../res/11.png)
+![tupian](../res/1.png)
 
 ### webpack.config.js
 ```js
