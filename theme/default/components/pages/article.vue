@@ -7,7 +7,7 @@
     <span v-if="tags">标签 :{{tags}} </span>
     <span v-if="categories">分类 ： {{categories}} </span>
    </div>
-  <vue-lazy-component>
+  <vue-lazy-component timeout="1000" >
     <article class="article" v-html="articleContent" v-highlight v-if="!passErr">
     </article>
 

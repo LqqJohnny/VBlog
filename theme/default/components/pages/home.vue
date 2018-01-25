@@ -1,7 +1,7 @@
 <template lang="html">
 <div class="home">
     <div class="title">文章列表</div>
-    <vue-lazy-component>
+    <vue-lazy-component  timeout="500">
       <div class="articlesList">
         <div class="article_item" v-for="a in list" >
           <router-link :to="genUrl(a.name)">{{genTitle(a.name)}}</router-link>
