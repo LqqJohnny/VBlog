@@ -1,23 +1,30 @@
 <template lang="html">
   <div class="articleInfo">
-  <div class="title">{{$route.params.id}}</div>
-  <hr>
-  <div class="info">
-    <span v-if="date">日期 :{{date}} </span>
-    <span v-if="tags">标签 :{{tags}} </span>
-    <span v-if="categories">分类 ： {{categories}} </span>
-   </div>
-  <vue-lazy-component timeout="1000" >
-    <article class="article" v-html="articleContent" v-highlight v-if="!passErr">
-    </article>
+    <div class="title">{{$route.params.id}}</div>
+    <hr>
+    <div class="info">
+      <span v-if="date">日期 :{{date}} </span>
+      <span v-if="tags">标签 :{{tags}} </span>
+      <span v-if="categories">分类 ： {{categories}} </span>
+    </div>
+    <div id="artConWrap">
+      <vue-lazy-component :timeout="500" class="lazyComponent"  @after-leave="afterInit" :class="{'done' : slideStart}">
+        <article class="article" id="article" v-html="articleContent" v-highlight v-if="!passErr">
+        </article>
 
-    <artContentSkt slot="skeleton"></artContentSkt>
-  </vue-lazy-component>
+        <artContentSkt slot="skeleton"></artContentSkt>
+      </vue-lazy-component>
+    </div>
+    <!-- 查看大图插件 -->
+    <div @click="hideBigPic">
+      <bigPicture v-if="showBigPic" :src="bigPicSrc" :alt="bigPicAlt" ></bigPicture>
+    </div>
   </div>
 </template>
 
 <script>
 import artContentSkt from "../common/artContentSkt.vue"
+import bigPicture from "../common/bigPicture.vue"
 var articles = require('../../../../articles.json');
 import { passwordOn } from '../../../../blog.config.js';
 import "../../../../static/sakura.css"
@@ -31,10 +38,24 @@ export default {
       categories:"",
       password:"",
       passErr:false,
+      slideStart:false,
+      showBigPic: false,
+      bigPicSrc: "",
+      bigPicAlt: ""
+    }
+  },
+  methods:{
+    afterInit(){
+      this.slideStart = true;
+    },
+    hideBigPic(){
+      this.showBigPic = false;
+      this.bigPicSrc = "";
+      this.bigPicAlt = "";
     }
   },
   components:{
-    artContentSkt
+    artContentSkt,bigPicture
   },
   beforeMount(){
     var id = this.$route.params.id;
@@ -67,6 +88,16 @@ export default {
       md = md.substring(start+"<!-- deleteAbove -->".length);
     }
     this.articleContent = md;
+    var that = this;
+    var articlecontainer = document.getElementById('artConWrap');
+    articlecontainer.addEventListener('click',function(e){
+      if(e.target.nodeName==="IMG"){
+        var src = e.target.currentSrc;
+        that.showBigPic = true;
+        that.bigPicSrc = src;
+        that.bigPicAlt = e.target.alt;
+      }
+    })
   }
 }
 </script>
@@ -90,5 +121,16 @@ export default {
 .article p:nth-of-type(0){
   display: none;
 }
+.lazyComponent{
+  max-height: 25rem;
+  min-height: 25rem;
+  overflow: hidden;
+  transition: max-height ease 5s;
+}
 
+.lazyComponent.done{
+  max-height:10000vh;
+  min-height: 0;
+  transition: max-height ease-in 5s;
+}
 </style>
