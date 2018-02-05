@@ -2,6 +2,10 @@
 
 > a simple blog project based on Vue.
 
+## DEMO
+
+[demo](https://lqqjohnny.github.io/mypages/vblog/#/)
+
 ## 安装运行
 
 以下提供两种方式：
