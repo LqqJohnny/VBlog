@@ -1,5 +1,12 @@
 
-<p align='center'>![vblog](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png)</p>
+<p align='center'>
+  <img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png" alt="vblog">
+</p>
+<p>
+<img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/plug.svg" alt="">
+<img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/rust.svg" alt="">
+<img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/stable.svg" alt="">
+</p>
 
 ## VBlog
 
