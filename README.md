@@ -1,10 +1,12 @@
 
-## VBlog
-
-<div align=center>![vblog](./static/vblog.png)</div>
+<p align='center'>![vblog](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png)</p>
 <p align='center'>
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]() [![Read the Docs (version)](https://img.shields.io/readthedocs/pip/stable.svg)]() [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)]()
 </p>
+
+## VBlog
+
+
 ### 简介
 VBlog 是我个人开发的博客框架，受启发于hexo 和 vue ，使用了vue-cli 的 webpack 配置代码 ，部分原理模仿 hexo 。也有许多与hexo 不同之处。
 
