@@ -1,9 +1,5 @@
 
-![vblog](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png)
-<!-- <p align='center'> -->
-![Travis](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/rust.svg) ![Read the Docs](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/stable.svg)
-![Hex.pm](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/plug.svg)
-<!-- </p> -->
+<p align='center'>![vblog](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png)</p>
 
 ## VBlog
 
