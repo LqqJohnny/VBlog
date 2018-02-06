@@ -1,8 +1,8 @@
 module.exports = {
   site:{
-    title: '****的小博客',
-    subtitle: '面试造火箭，上岗拧螺丝',
-    description: ' --- 我是一个粉刷匠！',
+    title: '****的博客',
+    subtitle: 'hello,world',
+    description: 'vblog',
     author: '我是作者',
     email:'12*****@qq.com'
   },
