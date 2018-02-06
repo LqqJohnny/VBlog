@@ -1,7 +1,8 @@
 
 <p align='center'>![vblog](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png)</p>
 <p align='center'>
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]() [![Read the Docs (version)](https://img.shields.io/readthedocs/pip/stable.svg)]() [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)]()
+![Travis](https://img.shields.io/travis/rust-lang/rust.svg) ![Read the Docs](https://img.shields.io/readthedocs/pip/stable.svg)
+![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)
 </p>
 
 ## VBlog
