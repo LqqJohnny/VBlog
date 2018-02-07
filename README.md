@@ -2,10 +2,11 @@
 <p align='center'>
   <img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png" alt="vblog">
 </p>
-<p>
-<img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/plug.svg" alt="">
-<img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/rust.svg" alt="">
-<img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/stable.svg" alt="">
+<p  align='center'>
+
+[![](https://travis-ci.org/Alamofire/Alamofire.svg?branch=master)](https://travis-ci.org/Alamofire/Alamofire)
+
+
 </p>
 
 ## VBlog
