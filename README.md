@@ -2,15 +2,12 @@
 <p align='center'>
   <img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png" alt="vblog">
 </p>
-<div align='center'>
-<!-- build status-->
-[![Build Status](https://travis-ci.org/LqqJohnny/VBlog.svg?branch=develop)](https://travis-ci.org/LqqJohnny/VBlog)
-<!-- download -->
-<!-- language -->
-![](https://img.shields.io/badge/language-javascript-yellow.svg)
-<!-- version -->
-</div>
 
+
+<p align="center">
+  <a href="https://travis-ci.org/LqqJohnny/VBlog"><img src="https://travis-ci.org/LqqJohnny/VBlog.svg?branch=develop" alt="Build Status"></a>
+  <a ><img src="https://img.shields.io/badge/language-javascript-yellow.svg" alt="Build Status"></a>
+</p>
 
 ## VBlog
 

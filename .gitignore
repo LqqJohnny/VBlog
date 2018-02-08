@@ -5,6 +5,7 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json*
 dist/
+.travis.yml
 # Editor directories and files
 .idea
 *.suo
