@@ -2,10 +2,8 @@
 <p align='center'>
   <img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png" alt="vblog">
 </p>
-<p  align='center'>
 
-[![](https://travis-ci.org/Alamofire/Alamofire.svg?branch=master)](https://travis-ci.org/Alamofire/Alamofire)
-
+<p  align='center'>[![](https://travis-ci.org/LqqJohnny/VBlog.svg?branch=master)](https://travis-ci.org/LqqJohnny/VBlog)
 
 </p>
 
