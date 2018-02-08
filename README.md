@@ -1,8 +1,10 @@
 
-<p align='center'>![vblog](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png)</p>
 <p align='center'>
-![Travis](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/rust.svg) ![Read the Docs](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/stable.svg)
-![Hex.pm](https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/plug.svg)
+  <img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png" alt="vblog">
+</p>
+
+<p  align='center'>[![](https://travis-ci.org/LqqJohnny/VBlog.svg?branch=master)](https://travis-ci.org/LqqJohnny/VBlog)
+
 </p>
 
 ## VBlog
