@@ -3,13 +3,17 @@
   <img src="https://raw.githubusercontent.com/LqqJohnny/VBlog/master/static/vblog.png" alt="vblog">
 </p>
 <p align='center'>
+
 <!-- build status-->
 [![Build Status](https://travis-ci.org/LqqJohnny/VBlog.svg?branch=develop)](https://travis-ci.org/LqqJohnny/VBlog)
 <!-- download -->
 <!-- language -->
 ![](https://img.shields.io/badge/language-javascript-yellow.svg)
 <!-- version -->
+
 </p>
+
+
 ## VBlog
 
 
