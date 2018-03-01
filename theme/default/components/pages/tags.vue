@@ -1,7 +1,7 @@
 <template lang="html">
 	<div class="category_box">
 		<h3 class="cate_title">标签</h3>
-		<div class='wordcloud'>
+		<div class='wordcloud' v-if="worldCloudOn">
 			<vue-word-cloud
 				:words="words"
 				:rotation=0
@@ -32,12 +32,14 @@
 </template>
 <script>
 var tags = require('../../../../tags.json');
+var {worldCloudOn} = require('../../theme.config');
 export default {
 	data(){
 		return {
 			tags: tags,
 			showArticles:[],
-			selectTag:""
+			selectTag:"",
+			worldCloudOn: worldCloudOn
 		}
 	},
 	computed:{
