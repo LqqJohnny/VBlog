@@ -1,6 +1,14 @@
 <template lang="html">
 	<div class="category_box">
 		<h3 class="cate_title">标签</h3>
+		<div class='wordcloud'>
+			<vue-word-cloud
+				:words="words"
+				:rotation=0
+				:color="([, weight]) => weight > 10 ? 'DeepPink' : weight > 5 ? 'RoyalBlue' : 'Indigo'"
+				font-family="Anton"
+			></vue-word-cloud>
+		</div>
 		<div class="cate_list">
 			<ul class="clearfix">
 				<li   v-for="(val,key) in tags"
@@ -10,6 +18,7 @@
 					<a :style="{fontSize : genFontSize(val.length)}">{{key}}</a>
 				</li>
 			</ul>
+
 			<div v-if="showArticles.length>0">
 				<hr>
 				<ul>
@@ -29,6 +38,15 @@ export default {
 			tags: tags,
 			showArticles:[],
 			selectTag:""
+		}
+	},
+	computed:{
+		words(){
+			let words = [];
+			for(var key  in tags){
+				words.push([key,tags[key].length]);
+			}
+			return words;
 		}
 	},
 	methods:{
@@ -52,6 +70,12 @@ export default {
 }
 </script>
 <style type="text/css" scoped>
+.wordcloud{
+	width:90%;
+	margin:0 auto;
+	height:23rem;
+	margin-top:2rem;
+}
   hr {
       border-color: #2c8898;
   }
