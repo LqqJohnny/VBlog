@@ -1,0 +1,33 @@
+h1,h2,h3,h4,h5,h6{
+  margin: .5rem 0;
+}
+
+
+html ,body{
+ font-size : 20px;
+}
+@media only screen and (min-width: 401px){
+ html ,body{
+     font-size: 15px !important;
+ }
+}
+@media only screen and (min-width: 428px){
+ html ,body{
+     font-size: 16px !important;
+ }
+}
+@media only screen and (min-width: 481px){
+ html ,body{
+     font-size: 18px !important;
+ }
+}
+@media only screen and (min-width: 569px){
+ html ,body{
+     font-size: 17px !important;
+ }
+}
+@media only screen and (min-width: 641px){
+ html ,body{
+     font-size: 16px !important;
+ }
+}
